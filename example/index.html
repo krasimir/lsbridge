@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lsbridge</title>
+    <style type="text/css">
+      body, html {
+        font-family: Tahoma;
+        font-size: 18px;
+      }
+      section {
+        float: left;
+        width: 50%;
+        text-align: center;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+      label, input, button {
+        display: block;
+        margin: 0 auto;
+      }
+      label {
+        padding: 0.3em 0;
+      }
+      input {
+        font-size: 1em;
+        font-family: inherit;
+        padding: 0.2em;
+      }
+      button {
+        margin-top: 1.4em;
+        font-size: 1em;
+      }
+      h2 {
+        padding: 0;
+        margin: 0 0 1em 0;
+      }
+      h1 {
+        text-align: center;
+        padding: 0;
+        margin: 1em 0 2em 0;
+      }
+      .messages {
+        margin: 0 auto;
+        width: 80%;
+        padding: 0.4em;
+        font-size: 0.8em;
+        margin-top: 3em;
+        border: solid 1px #999;
+        min-height: 10em;
+        text-align: left;
+      }
+    </style>
+    <script src="../src/lsbridge.js"></script>
+    <script src="./logic.js"></script>
+  </head>
+  <body>
+    <h1>lsbridge example</h1>
+    <section>
+      <h2>Send a message:</h2>
+      <label>Namespace:</label>
+      <input type="text" id="namespace-sending" value="bridge" />
+      <label>Message:</label>
+      <input type="text" id="message" />
+      <button class="js-send">Send</button>
+    </section>
+    <section>
+      <h2>Subscribe:</h2>
+      <label>Namespace:</label>
+      <input type="text" id="namespace-subscribing" value="bridge" />
+      <button class="js-subscribe">Subscribe</button>
+      <div class="messages js-messages"></div>
+    </section>
+  </body>
+</html>

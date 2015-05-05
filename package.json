@@ -1,0 +1,29 @@
+{
+  "name": "lsbridge",
+  "version": "0.0.1",
+  "description": "Using the local storage as a communication channel",
+  "main": "",
+  "author": {
+    "name": "Krasimir Tsonev",
+    "email": "info@krasimirtsonev.com",
+    "url": "http://krasimirtsonev.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "uglify-js": "2.4.21"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "localStorage",
+    "bridge",
+    "communication",
+    "messages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krasimir/lsbridge.git"
+  },
+  "scripts": {
+    "compile": "./node_modules/uglify-js/bin/uglifyjs --compress --mangle -o ./build/lsbridge.min.js -- ./src/lsbridge.js"
+  }
+}
