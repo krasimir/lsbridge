@@ -2,6 +2,8 @@
 
 1K library for exchanging messages between tabs in a same browser. It uses the local storage as a communication channel.
 
+> The story behind the library is available [here](http://krasimirtsonev.com/blog/article/Using-Local-Storage-as-a-communication-channel).
+
 ## Usage
 
 Add **lsbridge.min.js** to your page:
