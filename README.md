@@ -36,3 +36,9 @@ console.log(lsbridge.isLSAvailable); // prints "true" or "false"
 
 * Run `npm install` to get UglifyJS installed.
 * Run `npm run-script compile` to produce `build/jsbridge.min.js`
+
+## Example
+
+Try it yourself by opening `example/index.html` in a browser.
+
+![lsbridge](http://work.krasimirtsonev.com/git/lsbridge/lsbridge.gif)
