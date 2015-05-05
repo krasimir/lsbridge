@@ -1,6 +1,6 @@
-# Local Storage Bridge
+# The Local Storage Bridge
 
-Using the local storage as a communication channel.
+1K library for exchanging messages between tabs in a same browser. It uses the local storage as a communication channel.
 
 ## Usage
 
