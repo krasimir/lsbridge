@@ -30,35 +30,38 @@
   if(api.isLSAvailable) {
 
     var interval = 100
-      , intervalForRemoval = 1000
+      , intervalForRemoval = 200
       , ls = localStorage
       , listeners = {}
       , isLoopStarted = false
       , buffer = {};
 
-    var loop = function() {
+    var loop = function () {
       for(var namespace in listeners) {
         var data = ls.getItem(namespace);
-        if(data && buffer[namespace] && buffer[namespace].indexOf(data) === -1) {
+        if (data && buffer[namespace] && buffer[namespace].indexOf(data) === -1) {
           buffer[namespace].push(data);
           try {
             var parsed = JSON.parse(data);
             if(parsed) data = parsed;
           } catch(e) {}
-          for(var i=0; i<listeners[namespace].length; i++) {
+          for (var i = 0; i < listeners[namespace].length; i++) {
             listeners[namespace][i](data);
           }
           if(!ls.getItem(namespace + '-removeit')) {
             ls.setItem(namespace + '-removeit', '1');
-            (function(n) {
-              setTimeout(function() {
-                ls.removeItem(n);
-                ls.removeItem(n + '-removeit');
-                buffer[namespace] = [];
-              }, intervalForRemoval);
-            })(namespace);
           }
-        } else if(!data) {
+
+          (function (n) {
+              setTimeout(function () {
+                  console.log("remove");
+                  ls.removeItem(n);
+                  ls.removeItem(n + '-removeit');
+                  buffer[namespace] = [];
+              }, intervalForRemoval);
+          })(namespace);
+
+        } else if (!data) {
           buffer[namespace] = [];
         }
       }
@@ -66,7 +69,7 @@
       return true;
     };
 
-    api.send = function(namespace, data) {
+    api.send = function (namespace, data) {
       var raw = '';
       if(typeof data === 'function') { data = data(); }
       if(typeof data === 'object') {
@@ -78,7 +81,7 @@
     };
 
     
-    api.subscribe = function(namespace, cb) {
+    api.subscribe = function (namespace, cb) {
       if(!listeners[namespace]) {
         listeners[namespace] = [];
         buffer[namespace] = [];
