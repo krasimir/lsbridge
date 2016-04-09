@@ -50,14 +50,14 @@
           }
           if(!ls.getItem(namespace + '-removeit')) {
             ls.setItem(namespace + '-removeit', '1');
+            (function(n) {
+              setTimeout(function() {
+                ls.removeItem(n);
+                ls.removeItem(n + '-removeit');
+                buffer[namespace] = [];
+              }, intervalForRemoval);
+            })(namespace);
           }
-          (function(n) {
-            setTimeout(function() {
-              ls.removeItem(n);
-              ls.removeItem(n + '-removeit');
-              buffer[namespace] = [];
-            }, intervalForRemoval);
-          })(namespace);
         } else if(!data) {
           buffer[namespace] = [];
         }
