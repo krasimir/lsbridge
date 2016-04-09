@@ -30,7 +30,7 @@
   if(api.isLSAvailable) {
 
     var interval = 100
-      , intervalForRemoval = 1000
+      , intervalForRemoval = 200
       , ls = localStorage
       , listeners = {}
       , isLoopStarted = false
