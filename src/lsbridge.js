@@ -8,7 +8,7 @@
   }
 }(this, function() {
 
-  /* 
+  /*
     - Storing messages in localStorage.
     - Clients subscribe to the changes and
       they get notified if a new message arrives.
@@ -77,7 +77,7 @@
       ls.setItem(namespace, raw);
     };
 
-    
+
     api.subscribe = function(namespace, cb) {
       if(!listeners[namespace]) {
         listeners[namespace] = [];
@@ -86,6 +86,15 @@
       listeners[namespace].push(cb);
       if(!isLoopStarted) {
         isLoopStarted = loop();
+      }
+    };
+
+    api.unsubscribe = function (namespace) {
+      if(listeners[namespace]) {
+        listeners[namespace] = [];
+      }
+      if(buffer[namespace]) {
+        buffer[namespace] = [];
       }
     };
 

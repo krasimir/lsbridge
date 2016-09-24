@@ -34,6 +34,12 @@ Find out if `localStorage` is available:
 console.log(lsbridge.isLSAvailable); // prints "true" or "false"
 ```
 
+Cancel listeners for specific namespace:
+
+```js
+lsbridge.unsubscribe('my-namespace');
+```
+
 ## Compilation
 
 * Run `npm install` to get UglifyJS installed.
