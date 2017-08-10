@@ -1,8 +1,8 @@
 {
   "name": "lsbridge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Using the local storage as a communication channel",
-  "main": "",
+  "main": "build/lsbridge.min.js",
   "author": {
     "name": "Krasimir Tsonev",
     "email": "info@krasimirtsonev.com",
